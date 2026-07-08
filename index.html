@@ -3,14 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Marina's Space</title>
+    <title>Hi, Marina! 🌊</title>
     <style>
-        /* 全局样式重置与背景 */
+        /* 全局样式：暖色调梦幻渐变 */
         body {
             margin: 0;
             padding: 0;
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-            background: linear-gradient(135deg, #e0c3fc 0%, #8ec5fc 100%);
+            font-family: 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            background-image: linear-gradient(120deg, #fccb90 0%, #d57eeb 100%);
             min-height: 100vh;
             display: flex;
             justify-content: center;
@@ -18,80 +18,126 @@
             color: #333;
         }
 
-        /* 个人卡片样式 */
-        .card {
-            background: rgba(255, 255, 255, 0.85);
-            backdrop-filter: blur(10px);
+        /* 个人名片容器（毛玻璃质感） */
+        .marina-card {
+            background: rgba(255, 255, 255, 0.75);
+            border-radius: 24px;
             padding: 40px;
-            border-radius: 20px;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.08);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
             text-align: center;
-            max-width: 400px;
-            width: 90%;
-            transition: transform 0.3s ease;
+            max-width: 420px;
+            width: 85%;
+            border: 1px solid rgba(255, 255, 255, 0.4);
+            
+            opacity: 0;
+            transform: translateY(20px);
+            animation: fadeInUp 0.8s ease forwards;
         }
 
-        .card:hover {
-            transform: translateY(-5px);
-        }
-
-        /* 头像（这里用文字代替，你可以以后换成图片） */
-        .avatar {
-            width: 100px;
-            height: 100px;
-            background: #8ec5fc;
-            border-radius: 50%;
-            margin: 0 auto 20px;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            font-size: 40px;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-        }
-
-        /* 名字 */
         h1 {
-            margin: 10px 0;
-            font-size: 28px;
+            margin: 0 0 8px 0;
+            font-size: 30px;
             color: #2c3e50;
+            font-weight: 700;
         }
 
-        /* 简介 */
-        p {
+        .hello-world {
             font-size: 16px;
-            color: #666;
-            line-height: 1.6;
-            margin-bottom: 30px;
+            color: #6c5ce7;
+            font-weight: 500;
+            margin-bottom: 15px;
         }
 
-        /* 按钮链接 */
-        .btn {
-            display: inline-block;
-            padding: 12px 30px;
+        p {
+            font-size: 15px;
+            color: #7f8c8d;
+            line-height: 1.6;
+            margin: 0 0 30px 0;
+        }
+
+        /* 三大模块导航区域 */
+        .nav-container {
+            display: flex;
+            flex-direction: column;
+            gap: 12px; /* 按钮之间的间距 */
+        }
+
+        /* 模块导航按钮基础样式 */
+        .nav-btn {
+            display: flex;
+            align-items: center;
+            padding: 14px 20px;
+            background: rgba(255, 255, 255, 0.6);
+            color: #4a4a4a;
+            text-decoration: none;
+            border-radius: 16px;
+            font-weight: 600;
+            font-size: 15px;
+            border: 1px solid rgba(255, 255, 255, 0.5);
+            transition: all 0.25s ease;
+        }
+
+        /* 按钮前面的 Emoji 样式 */
+        .nav-btn .icon {
+            font-size: 20px;
+            margin-right: 15px;
+        }
+
+        /* 按钮后面的箭头提示 */
+        .nav-btn::after {
+            content: "→";
+            margin-left: auto;
+            color: #b2bec3;
+            transition: transform 0.25s ease;
+        }
+
+        /* 悬浮动效：鼠标移上去时按钮亮起、微微放大、箭头右移 */
+        .nav-btn:hover {
             background: #6c5ce7;
             color: white;
-            text-decoration: none;
-            border-radius: 25px;
-            font-weight: bold;
-            box-shadow: 0 5px 15px rgba(108, 92, 231, 0.4);
-            transition: all 0.3s ease;
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(108, 92, 231, 0.2);
+            border-color: transparent;
         }
 
-        .btn:hover {
-            background: #5b4bc4;
-            box-shadow: 0 8px 20px rgba(108, 92, 231, 0.6);
+        .nav-btn:hover::after {
+            color: white;
+            transform: translateX(3px);
+        }
+
+        /* 渐入动画 */
+        @keyframes fadeInUp {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
         }
     </style>
 </head>
 <body>
 
-    <div class="card">
-        <div class="avatar">🌊</div>
+    <div class="marina-card">
+        <h1>Hi, I'm Marina</h1>
+        <div class="hello-world">Hello World ✨</div>
+        <p>欢迎来到我的个人秘密基地，这里记录着我的学习轨迹与生活碎片。</p>
         
-        <h1>Hi, 我是 Marina</h1>
-        <p>欢迎来到我的个人秘密基地！这是我用 GitHub Pages 搭建的第一个网站。未来我打算在这里分享我的生活、想法和有趣的项目。</p>
-        
-        <a href="#" class="btn">探索更多</a>
+        <!-- 核心：三大模块导航链接 -->
+        <div class="nav-container">
+            <!-- 📢 【重要提示】：请把链接中的“你的GitHub用户名”修改为你真正的GitHub用户名 -->
+            <a href="https://github.com/你的GitHub用户名/你的GitHub用户名/tree/main/study-notes" target="_blank" class="nav-btn">
+                <span class="icon">📚</span> 学习笔记 (Learning Notes)
+            </a>
+            
+            <a href="https://github.com/你的GitHub用户名/你的GitHub用户名/tree/main/portfolio" target="_blank" class="nav-btn">
+                <span class="icon">💻</span> 项目作品 (Portfolio)
+            </a>
+            
+            <a href="https://github.com/你的GitHub用户名/你的GitHub用户名/tree/main/life-logs" target="_blank" class="nav-btn">
+                <span class="icon">🍃</span> 烟火生活 (Life & Logs)
+            </a>
+        </div>
     </div>
 
 </body>
